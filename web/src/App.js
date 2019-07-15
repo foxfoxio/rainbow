@@ -7,13 +7,37 @@ export const Facebookz = styled.div`
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
 
-  div {
+  .bg {
     display: block;
     background-image: url('/img/event.jpg');
     background-size: cover;
     background-repeat: no-repeat
     background-position: 50% 50%;
     background-color: whitesmoke;
+
+    .tile {
+      background-image: url('/img/4dot.png');
+      display: block;
+      width: 100%;
+      height: 100%;
+      position:absolute;
+    }
+
+    .header-left {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+    }
+    
+    .logo {
+      width: 32px;
+      height: auto;
+    }
+  
+    .logo-text {
+      width: auto;
+      height: 1em;
+    }
   }
 
   .cover
@@ -24,9 +48,6 @@ export const Facebookz = styled.div`
 
   .event
   {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     max-width: 500px;
     margin: auto;
     
@@ -38,7 +59,7 @@ export const Facebookz = styled.div`
       border-width: 0;
       font-size: 32px;
       width: fit-content;
-      height: fit-content;
+      height: 32px;
       text-shadow: -1px 0 red, 1px 0 cyan;
       color: white;
       text-align: center;
@@ -81,7 +102,11 @@ export default () => {
       <hr />
       <h1>Event</h1>
       <small>500x262 pixels</small>
-      <div className='event' ref={eventRef}>
+      <div className='bg event' ref={eventRef}>
+        <div className='header-left'>
+          <img className='logo' alt='FoxFox Logo' src='/img/foxfox-logo.svg' />
+          <img className='logo-text' alt='FoxFox Text Logo' src='/img/foxfox-text.svg' />
+        </div>
         <input type='text' size={size} onChange={onChange} defaultValue={eventTitle} />
       </div>
       <button onClick={onClick}>SAVE</button>
