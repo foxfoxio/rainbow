@@ -9,7 +9,7 @@ export const Facebookz = styled.div`
 
   .bg {
     display: block;
-    background-image: url('/img/event.jpg');
+    //background-image: url('/img/event.jpg');
     background-size: cover;
     background-repeat: no-repeat
     background-position: 50% 50%;
@@ -54,13 +54,17 @@ export const Facebookz = styled.div`
     width: 500px;
     height: 262px;
 
+    .python {
+      width: 1.6em;
+      height: auto;
+    }
+
     input[type='text'] {
       background-color:rgb(0,0,0,0);
       border-width: 0;
-      font-size: 32px;
+      font-size: 2em;
       width: fit-content;
-      height: 32px;
-      text-shadow: -1px 0 red, 1px 0 cyan;
+      height: 2em;
       color: white;
       text-align: center;
     }
@@ -68,7 +72,7 @@ export const Facebookz = styled.div`
 `
 
 export default () => {
-  const [eventTitle] = useState('Python for Data Science')
+  const [eventTitle] = useState('Basic Python')
   const [size, setSize] = useState(eventTitle.length)
   const eventRef = useRef(null)
 
@@ -95,19 +99,22 @@ export default () => {
   return (
     <Facebookz>
       <h1>Cover</h1>
-      <small>Recommend 1200x628 pixels (1.9:1)</small>
-      <small>Real use 820x430 pixels</small>
+      <small>Recommend 1200x628 (1.9:1)</small>
+      <small>1x = 820x430, 2x = 1600×838</small>
       <div className='cover' />
       <button>SAVE</button>
       <hr />
       <h1>Event</h1>
-      <small>500x262 pixels</small>
+      <small>1x = 500x262, 2x = 1000x524</small>
       <div className='bg event' ref={eventRef}>
         <div className='header-left'>
           <img className='logo' alt='FoxFox Logo' src='/img/foxfox-logo.svg' />
           <img className='logo-text' alt='FoxFox Text Logo' src='/img/foxfox-text.svg' />
         </div>
-        <input type='text' size={size} onChange={onChange} defaultValue={eventTitle} />
+        <div className='topic'>
+          <img className='python' alt='python' src='/img/course/python.svg' />
+          <input type='text' size={size} onChange={onChange} defaultValue={eventTitle} />
+        </div>{' '}
       </div>
       <button onClick={onClick}>SAVE</button>
       <br />
