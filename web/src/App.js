@@ -41,7 +41,7 @@ export const Facebookz = styled.div`
       height: fit-content;
       text-shadow: -1px 0 red, 1px 0 cyan;
       color: white;
-      text-align: left;
+      text-align: center;
     }
   }
 `
